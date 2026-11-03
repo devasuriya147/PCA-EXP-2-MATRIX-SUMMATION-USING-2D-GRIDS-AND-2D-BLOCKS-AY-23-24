@@ -36,7 +36,7 @@ Google Colab with NVCC Compiler
 
 ## PROGRAM:
 
-## FOR FLOAT DATA
+## FOR INT DATA
 ```
 %%cuda
 #include <stdio.h>
@@ -191,7 +191,7 @@ void checkResult(float *hostRef, float *gpuRef, const int N)
         printf("Arrays do not match.\n\n");
 }
 
-__global__ void sumMatrixOnGPU2D(float *A, float *B, float *C, int NX, int NY)
+__global__ void sumMatrixOnGPU2D(int *A, int *B, int *C, int NX, int NY)
 {
 
   unsigned int ix = blockIdx.x * blockDim.x + threadIdx.x;
@@ -256,7 +256,7 @@ int main(int argc, char **argv)
     printf("sumMatrixOnHost elapsed %f sec\n", iElaps);
 
     // malloc device global memory
-    float *d_MatA, *d_MatB, *d_MatC;
+    int *d_MatA, *d_MatB, *d_MatC;
     CHECK(cudaMalloc((void **)&d_MatA, nBytes));
     CHECK(cudaMalloc((void **)&d_MatB, nBytes));
     CHECK(cudaMalloc((void **)&d_MatC, nBytes));
@@ -317,6 +317,7 @@ CHECK(cudaDeviceSynchronize());
     return (0);
 }
 ```
+
 
 ## FOR FLOAT DATA
 
@@ -603,6 +604,11 @@ CHECK(cudaDeviceSynchronize());
 ```
 
 ## OUTPUT:
+## FOR INT AS VALUE
+<img width="1418" height="417" alt="Screenshot 2026-11-02 143022" src="https://github.com/user-attachments/assets/53fd1781-d23f-47af-b8b3-44ed52453ca0" />
+## FOR FLOAT AS VALUE
+<img width="1127" height="198" alt="Screenshot 2026-11-02 143235" src="https://github.com/user-attachments/assets/273e7a9c-a841-422f-9f1e-0178c10320a6" />
+
 
 ## RESULT:
 The host took _________ seconds to complete it’s computation, while the GPU outperforms the host and completes the computation in ________ seconds. Therefore, float variables in the GPU will result in the best possible result. Thus, matrix summation using 2D grids and 2D blocks has been performed successfully.
