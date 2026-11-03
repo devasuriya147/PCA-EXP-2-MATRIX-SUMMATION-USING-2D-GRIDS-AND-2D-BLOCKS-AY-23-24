@@ -613,7 +613,4 @@ CHECK(cudaDeviceSynchronize());
 
 
 ## RESULT:
-## 1.Integer (INT): CPU execution time is 0.876842 sec, while GPU execution time is 0.014824 sec. The CPU and GPU results do not match.
-## 2.Floating Point (FLOAT): CPU execution time is 0.857756 sec, while GPU execution time is 0.013591 sec. The CPU and GPU results match successfully.
-## 3.Performance: GPU execution is significantly faster than CPU execution in both cases.
-## 4.Conclusion: Floating-point matrix addition is successful, whereas integer matrix addition fails the verification test and requires debugging.
+The matrix addition was performed using an NVIDIA Tesla T4 GPU with a matrix size of 16384 × 16384. In the Integer (INT) execution, the CPU took 0.876842 seconds, while the GPU took 0.014824 seconds, but the CPU and GPU results did not match. In the Floating-Point (FLOAT) execution, the CPU took 0.857756 seconds, while the GPU took 0.013591 seconds, and both results matched successfully. The GPU performed significantly faster than the CPU in both executions. Thus, floating-point execution was successful, whereas integer execution failed the verification test and requires debugging.
