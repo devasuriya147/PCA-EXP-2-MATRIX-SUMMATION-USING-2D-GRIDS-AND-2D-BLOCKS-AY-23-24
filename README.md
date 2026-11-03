@@ -318,6 +318,8 @@ CHECK(cudaDeviceSynchronize());
 }
 ```
 
+## FOR FLOAT DATA
+
 ```
 %%cuda
 #include <stdio.h>
