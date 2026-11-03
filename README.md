@@ -606,12 +606,14 @@ CHECK(cudaDeviceSynchronize());
 ## OUTPUT:
 ## FOR INT AS VALUE
 <img width="1418" height="417" alt="Screenshot 2026-11-02 143022" src="https://github.com/user-attachments/assets/53fd1781-d23f-47af-b8b3-44ed52453ca0" />
+
+
 ## FOR FLOAT AS VALUE
 <img width="1127" height="198" alt="Screenshot 2026-11-02 143235" src="https://github.com/user-attachments/assets/273e7a9c-a841-422f-9f1e-0178c10320a6" />
 
 
 ## RESULT:
-1.Integer (INT): CPU execution time is 0.876842 sec, while GPU execution time is 0.014824 sec. The CPU and GPU results do not match.
-2.Floating Point (FLOAT): CPU execution time is 0.857756 sec, while GPU execution time is 0.013591 sec. The CPU and GPU results match successfully.
-3.Performance: GPU execution is significantly faster than CPU execution in both cases.
-4.Conclusion: Floating-point matrix addition is successful, whereas integer matrix addition fails the verification test and requires debugging.
+## 1.Integer (INT): CPU execution time is 0.876842 sec, while GPU execution time is 0.014824 sec. The CPU and GPU results do not match.
+## 2.Floating Point (FLOAT): CPU execution time is 0.857756 sec, while GPU execution time is 0.013591 sec. The CPU and GPU results match successfully.
+## 3.Performance: GPU execution is significantly faster than CPU execution in both cases.
+## 4.Conclusion: Floating-point matrix addition is successful, whereas integer matrix addition fails the verification test and requires debugging.
